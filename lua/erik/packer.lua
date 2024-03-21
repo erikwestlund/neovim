@@ -30,7 +30,7 @@ use("ThePrimeagen/harpoon")
 use("mbbill/undotree")
 use("tpope/vim-fugitive")
 use("neovim/nvim-lspconfig")
-
+use("github/copilot.vim")
 use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v3.x',
