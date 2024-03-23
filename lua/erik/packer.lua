@@ -31,6 +31,7 @@ use("mbbill/undotree")
 use("tpope/vim-fugitive")
 use("neovim/nvim-lspconfig")
 use("github/copilot.vim")
+
 use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v3.x',
@@ -58,5 +59,6 @@ use("saadparwaiz1/cmp_luasnip")
 use("hrsh7th/cmp-nvim-lua")
 use("L3MON4D3/LuaSnip")
 use("rafamadriz/friendly-snippets")
+use("tpope/vim-commentary")
 
 end)
