@@ -1,0 +1,1194 @@
+./init.lua:require("erik")
+./plugin/packer_compiled.lua:-- Automatically generated packer.nvim plugin loader code
+./plugin/packer_compiled.lua:if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~= 1 then
+./plugin/packer_compiled.lua:  vim.api.nvim_command('echohl WarningMsg | echom "Invalid Neovim version for packer.nvim! | echohl None"')
+./plugin/packer_compiled.lua:  return
+./plugin/packer_compiled.lua:end
+./plugin/packer_compiled.lua:vim.api.nvim_command('packadd packer.nvim')
+./plugin/packer_compiled.lua:local no_errors, error_msg = pcall(function()
+./plugin/packer_compiled.lua:_G._packer = _G._packer or {}
+./plugin/packer_compiled.lua:_G._packer.inside_compile = true
+./plugin/packer_compiled.lua:local time
+./plugin/packer_compiled.lua:local profile_info
+./plugin/packer_compiled.lua:local should_profile = false
+./plugin/packer_compiled.lua:if should_profile then
+./plugin/packer_compiled.lua:  local hrtime = vim.loop.hrtime
+./plugin/packer_compiled.lua:  profile_info = {}
+./plugin/packer_compiled.lua:  time = function(chunk, start)
+./plugin/packer_compiled.lua:    if start then
+./plugin/packer_compiled.lua:      profile_info[chunk] = hrtime()
+./plugin/packer_compiled.lua:    else
+./plugin/packer_compiled.lua:      profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
+./plugin/packer_compiled.lua:    end
+./plugin/packer_compiled.lua:  end
+./plugin/packer_compiled.lua:else
+./plugin/packer_compiled.lua:  time = function(chunk, start) end
+./plugin/packer_compiled.lua:end
+./plugin/packer_compiled.lua:local function save_profiles(threshold)
+./plugin/packer_compiled.lua:  local sorted_times = {}
+./plugin/packer_compiled.lua:  for chunk_name, time_taken in pairs(profile_info) do
+./plugin/packer_compiled.lua:    sorted_times[#sorted_times + 1] = {chunk_name, time_taken}
+./plugin/packer_compiled.lua:  end
+./plugin/packer_compiled.lua:  table.sort(sorted_times, function(a, b) return a[2] > b[2] end)
+./plugin/packer_compiled.lua:  local results = {}
+./plugin/packer_compiled.lua:  for i, elem in ipairs(sorted_times) do
+./plugin/packer_compiled.lua:    if not threshold or threshold and elem[2] > threshold then
+./plugin/packer_compiled.lua:      results[i] = elem[1] .. ' took ' .. elem[2] .. 'ms'
+./plugin/packer_compiled.lua:    end
+./plugin/packer_compiled.lua:  end
+./plugin/packer_compiled.lua:  if threshold then
+./plugin/packer_compiled.lua:    table.insert(results, '(Only showing plugins that took longer than ' .. threshold .. ' ms ' .. 'to load)')
+./plugin/packer_compiled.lua:  end
+./plugin/packer_compiled.lua:  _G._packer.profile_output = results
+./plugin/packer_compiled.lua:end
+./plugin/packer_compiled.lua:time([[Luarocks path setup]], true)
+./plugin/packer_compiled.lua:local package_path_str = "/Users/erik/.cache/nvim/packer_hererocks/2.1.1710088188/share/lua/5.1/?.lua;/Users/erik/.cache/nvim/packer_hererocks/2.1.1710088188/share/lua/5.1/?/init.lua;/Users/erik/.cache/nvim/packer_hererocks/2.1.1710088188/lib/luarocks/rocks-5.1/?.lua;/Users/erik/.cache/nvim/packer_hererocks/2.1.1710088188/lib/luarocks/rocks-5.1/?/init.lua"
+./plugin/packer_compiled.lua:local install_cpath_pattern = "/Users/erik/.cache/nvim/packer_hererocks/2.1.1710088188/lib/lua/5.1/?.so"
+./plugin/packer_compiled.lua:if not string.find(package.path, package_path_str, 1, true) then
+./plugin/packer_compiled.lua:  package.path = package.path .. ';' .. package_path_str
+./plugin/packer_compiled.lua:end
+./plugin/packer_compiled.lua:if not string.find(package.cpath, install_cpath_pattern, 1, true) then
+./plugin/packer_compiled.lua:  package.cpath = package.cpath .. ';' .. install_cpath_pattern
+./plugin/packer_compiled.lua:end
+./plugin/packer_compiled.lua:time([[Luarocks path setup]], false)
+./plugin/packer_compiled.lua:time([[try_loadstring definition]], true)
+./plugin/packer_compiled.lua:local function try_loadstring(s, component, name)
+./plugin/packer_compiled.lua:  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
+./plugin/packer_compiled.lua:  if not success then
+./plugin/packer_compiled.lua:    vim.schedule(function()
+./plugin/packer_compiled.lua:      vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
+./plugin/packer_compiled.lua:    end)
+./plugin/packer_compiled.lua:  end
+./plugin/packer_compiled.lua:  return result
+./plugin/packer_compiled.lua:end
+./plugin/packer_compiled.lua:time([[try_loadstring definition]], false)
+./plugin/packer_compiled.lua:time([[Defining packer_plugins]], true)
+./plugin/packer_compiled.lua:_G.packer_plugins = {
+./plugin/packer_compiled.lua:  LuaSnip = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/LuaSnip",
+./plugin/packer_compiled.lua:    url = "https://github.com/L3MON4D3/LuaSnip"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["cmp-buffer"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+./plugin/packer_compiled.lua:    url = "https://github.com/hrsh7th/cmp-buffer"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["cmp-nvim-lsp"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+./plugin/packer_compiled.lua:    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["cmp-nvim-lua"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+./plugin/packer_compiled.lua:    url = "https://github.com/hrsh7th/cmp-nvim-lua"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["cmp-path"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/cmp-path",
+./plugin/packer_compiled.lua:    url = "https://github.com/hrsh7th/cmp-path"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  cmp_luasnip = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+./plugin/packer_compiled.lua:    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["copilot.vim"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/copilot.vim",
+./plugin/packer_compiled.lua:    url = "https://github.com/github/copilot.vim"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["friendly-snippets"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+./plugin/packer_compiled.lua:    url = "https://github.com/rafamadriz/friendly-snippets"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  harpoon = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/harpoon",
+./plugin/packer_compiled.lua:    url = "https://github.com/ThePrimeagen/harpoon"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["lsp-zero.nvim"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
+./plugin/packer_compiled.lua:    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["mason-lspconfig.nvim"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+./plugin/packer_compiled.lua:    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["mason.nvim"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/mason.nvim",
+./plugin/packer_compiled.lua:    url = "https://github.com/williamboman/mason.nvim"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["night-owl.nvim"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/night-owl.nvim",
+./plugin/packer_compiled.lua:    url = "https://github.com/oxfist/night-owl.nvim"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["nvim-cmp"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+./plugin/packer_compiled.lua:    url = "https://github.com/hrsh7th/nvim-cmp"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["nvim-lspconfig"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+./plugin/packer_compiled.lua:    url = "https://github.com/neovim/nvim-lspconfig"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["nvim-treesitter"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+./plugin/packer_compiled.lua:    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["packer.nvim"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/packer.nvim",
+./plugin/packer_compiled.lua:    url = "https://github.com/wbthomason/packer.nvim"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  playground = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/playground",
+./plugin/packer_compiled.lua:    url = "https://github.com/nvim-treesitter/playground"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["plenary.nvim"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+./plugin/packer_compiled.lua:    url = "https://github.com/nvim-lua/plenary.nvim"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["rose-pine"] = {
+./plugin/packer_compiled.lua:    config = { "\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0" },
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/rose-pine",
+./plugin/packer_compiled.lua:    url = "https://github.com/rose-pine/neovim"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["telescope.nvim"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+./plugin/packer_compiled.lua:    url = "https://github.com/nvim-telescope/telescope.nvim"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  undotree = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/undotree",
+./plugin/packer_compiled.lua:    url = "https://github.com/mbbill/undotree"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["vim-commentary"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/vim-commentary",
+./plugin/packer_compiled.lua:    url = "https://github.com/tpope/vim-commentary"
+./plugin/packer_compiled.lua:  },
+./plugin/packer_compiled.lua:  ["vim-fugitive"] = {
+./plugin/packer_compiled.lua:    loaded = true,
+./plugin/packer_compiled.lua:    path = "/Users/erik/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+./plugin/packer_compiled.lua:    url = "https://github.com/tpope/vim-fugitive"
+./plugin/packer_compiled.lua:  }
+./plugin/packer_compiled.lua:}
+./plugin/packer_compiled.lua:time([[Defining packer_plugins]], false)
+./plugin/packer_compiled.lua:-- Config for: rose-pine
+./plugin/packer_compiled.lua:time([[Config for rose-pine]], true)
+./plugin/packer_compiled.lua:try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
+./plugin/packer_compiled.lua:time([[Config for rose-pine]], false)
+./plugin/packer_compiled.lua:_G._packer.inside_compile = false
+./plugin/packer_compiled.lua:if _G._packer.needs_bufread == true then
+./plugin/packer_compiled.lua:  vim.cmd("doautocmd BufRead")
+./plugin/packer_compiled.lua:end
+./plugin/packer_compiled.lua:_G._packer.needs_bufread = false
+./plugin/packer_compiled.lua:if should_profile then save_profiles() end
+./plugin/packer_compiled.lua:end)
+./plugin/packer_compiled.lua:if not no_errors then
+./plugin/packer_compiled.lua:  error_msg = error_msg:gsub('"', '\\"')
+./plugin/packer_compiled.lua:  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
+./plugin/packer_compiled.lua:end
+./lua/erik/init.lua:require("erik.packer")
+./lua/erik/init.lua:require("erik.remap")
+./lua/erik/init.lua:require("erik.set")
+./lua/erik/packer.lua:-- This file can be loaded by calling `lua require("plugins")` from your init.vim
+./lua/erik/packer.lua:-- Only required if you have packer configured as `opt`
+./lua/erik/packer.lua:vim.cmd [[packadd packer.nvim]]
+./lua/erik/packer.lua:return require("packer").startup(function(use)
+./lua/erik/packer.lua:  -- Packer can manage itself
+./lua/erik/packer.lua:  use "wbthomason/packer.nvim"
+./lua/erik/packer.lua:  use {
+./lua/erik/packer.lua:	  "nvim-telescope/telescope.nvim", tag = "0.1.6",
+./lua/erik/packer.lua:	  -- or                            , branch = "0.1.x",
+./lua/erik/packer.lua:	  requires = { {"nvim-lua/plenary.nvim"} }
+./lua/erik/packer.lua:  }
+./lua/erik/packer.lua:use({
+./lua/erik/packer.lua:	"rose-pine/neovim",
+./lua/erik/packer.lua:	as = "rose-pine",
+./lua/erik/packer.lua:	config = function()
+./lua/erik/packer.lua:		vim.cmd("colorscheme rose-pine")
+./lua/erik/packer.lua:	end
+./lua/erik/packer.lua:})
+./lua/erik/packer.lua:use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
+./lua/erik/packer.lua:use("oxfist/night-owl.nvim", {run = ":TSUpdate"})
+./lua/erik/packer.lua:use("nvim-treesitter/playground")
+./lua/erik/packer.lua:use("nvim-lua/plenary.nvim")
+./lua/erik/packer.lua:use("ThePrimeagen/harpoon")
+./lua/erik/packer.lua:use("mbbill/undotree")
+./lua/erik/packer.lua:use("tpope/vim-fugitive")
+./lua/erik/packer.lua:use("neovim/nvim-lspconfig")
+./lua/erik/packer.lua:use("github/copilot.vim")
+./lua/erik/packer.lua:use {
+./lua/erik/packer.lua:  'VonHeikemen/lsp-zero.nvim',
+./lua/erik/packer.lua:  branch = 'v3.x',
+./lua/erik/packer.lua:  requires = {
+./lua/erik/packer.lua:    --- Uncomment the two plugins below if you want to manage the language servers from neovim
+./lua/erik/packer.lua:    -- {'williamboman/mason.nvim'},
+./lua/erik/packer.lua:    -- {'williamboman/mason-lspconfig.nvim'},
+./lua/erik/packer.lua:    -- LSP Support
+./lua/erik/packer.lua:    {'neovim/nvim-lspconfig'},
+./lua/erik/packer.lua:    -- Autocompletion
+./lua/erik/packer.lua:    {'hrsh7th/nvim-cmp'},
+./lua/erik/packer.lua:    {'hrsh7th/cmp-nvim-lsp'},
+./lua/erik/packer.lua:    {'L3MON4D3/LuaSnip'},
+./lua/erik/packer.lua:  }
+./lua/erik/packer.lua:}
+./lua/erik/packer.lua:use("williamboman/mason.nvim")
+./lua/erik/packer.lua:use("williamboman/mason-lspconfig.nvim")
+./lua/erik/packer.lua:use("hrsh7th/nvim-cmp")
+./lua/erik/packer.lua:use("hrsh7th/cmp-nvim-lsp")
+./lua/erik/packer.lua:use("hrsh7th/cmp-buffer")
+./lua/erik/packer.lua:use("hrsh7th/cmp-path")
+./lua/erik/packer.lua:use("saadparwaiz1/cmp_luasnip")
+./lua/erik/packer.lua:use("hrsh7th/cmp-nvim-lua")
+./lua/erik/packer.lua:use("L3MON4D3/LuaSnip")
+./lua/erik/packer.lua:use("rafamadriz/friendly-snippets")
+./lua/erik/packer.lua:use("tpope/vim-commentary")
+./lua/erik/packer.lua:end)
+./lua/erik/set.lua:vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
+./lua/erik/set.lua:vim.opt.nu = true
+./lua/erik/set.lua:vim.opt.relativenumber = true
+./lua/erik/set.lua:vim.opt.tabstop = 4
+./lua/erik/set.lua:vim.opt.softtabstop = 4
+./lua/erik/set.lua:vim.opt.shiftwidth = 4
+./lua/erik/set.lua:vim.opt.expandtab = true
+./lua/erik/set.lua:vim.opt.smartindent = true
+./lua/erik/set.lua:vim.opt.wrap = false
+./lua/erik/set.lua:vim.opt.swapfile = false
+./lua/erik/set.lua:vim.opt.backup = false
+./lua/erik/set.lua:vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+./lua/erik/set.lua:vim.opt.undofile = true
+./lua/erik/set.lua:vim.opt.hlsearch = false
+./lua/erik/set.lua:vim.opt.incsearch = true
+./lua/erik/set.lua:vim.opt.termguicolors = true
+./lua/erik/set.lua:vim.opt.scrolloff = 8
+./lua/erik/set.lua:vim.opt.signcolumn = "yes"
+./lua/erik/set.lua:vim.opt.isfname:append("@-@")
+./lua/erik/set.lua:vim.opt.updatetime = 50
+./lua/erik/set.lua:vim.opt.colorcolumn = "80"
+./lua/erik/remap.lua:vim.g.mapleader = " "
+./lua/erik/remap.lua:vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+./lua/erik/remap.lua:vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+./lua/erik/remap.lua:vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+./lua/erik/remap.lua:vim.keymap.set("n", "J", "mzJ`z")
+./lua/erik/remap.lua:vim.keymap.set("n", "<C-d>", "<C-d>zz")
+./lua/erik/remap.lua:vim.keymap.set("n", "<C-u>", "<C-u>zz")
+./lua/erik/remap.lua:vim.keymap.set("n", "n", "nzzzv")
+./lua/erik/remap.lua:vim.keymap.set("n", "N", "Nzzzv")
+./lua/erik/remap.lua:-- greatest remap ever
+./lua/erik/remap.lua:vim.keymap.set("x", "<leader>p", [["_dP]])
+./lua/erik/remap.lua:-- next greatest remap ever : asbjornHaland
+./lua/erik/remap.lua:vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+./lua/erik/remap.lua:vim.keymap.set("n", "<leader>Y", [["+Y]])
+./lua/erik/remap.lua:vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+./lua/erik/remap.lua:-- This is going to get me cancelled
+./lua/erik/remap.lua:vim.keymap.set("i", "<C-c>", "<Esc>")
+./lua/erik/remap.lua:vim.keymap.set("n", "Q", "<nop>")
+./lua/erik/remap.lua:vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+./lua/erik/remap.lua:vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+./lua/erik/remap.lua:vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+./lua/erik/remap.lua:vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+./lua/erik/remap.lua:vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+./lua/erik/remap.lua:vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+./lua/erik/remap.lua:vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+./lua/erik/remap.lua:vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+./lua/erik/remap.lua:vim.keymap.set("n", "<leader><leader>", function()
+./lua/erik/remap.lua:end)
+./README.md:# Notes 
+./README.md:I need to make sure the ansible playbook set up for the Linux machine
+./README.md:- installs Neovim
+./README.md:- install latest node/npm
+./README.md:- install pyright and other necessary packages for LSP
+./README.md:- install R including devtools
+./.gitignore:plugin/*
+./after/plugin/telescopa.lua:local builtin = require('telescope.builtin')
+./after/plugin/telescopa.lua:vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+./after/plugin/telescopa.lua:vim.keymap.set("n", "<C-p>", builtin.git_files, {})
+./after/plugin/telescopa.lua:vim.keymap.set("n", "<leader>ps", function()
+./after/plugin/telescopa.lua:	builtin.grep_string({ search = vim.fn.input("Grep > ") });
+./after/plugin/telescopa.lua:end)
+./after/plugin/colors.lua:function ColorScheme(color) 
+./after/plugin/colors.lua:	color = color or "night-owl"
+./after/plugin/colors.lua:	vim.cmd.colorscheme(color)
+./after/plugin/colors.lua:	
+./after/plugin/colors.lua:	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+./after/plugin/colors.lua:	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+./after/plugin/colors.lua:end
+./after/plugin/colors.lua:ColorScheme("night-owl")
+./after/plugin/lsp.lua:local lsp_zero = require('lsp-zero')
+./after/plugin/lsp.lua:lsp_zero.on_attach(function(client, bufnr)
+./after/plugin/lsp.lua:  local opts = {buffer = bufnr, remap = false}
+./after/plugin/lsp.lua:  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+./after/plugin/lsp.lua:  vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+./after/plugin/lsp.lua:  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+./after/plugin/lsp.lua:  vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+./after/plugin/lsp.lua:  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+./after/plugin/lsp.lua:  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+./after/plugin/lsp.lua:  vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+./after/plugin/lsp.lua:  vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+./after/plugin/lsp.lua:  vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+./after/plugin/lsp.lua:  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+./after/plugin/lsp.lua:end)
+./after/plugin/lsp.lua:-- to learn how to use mason.nvim with lsp-zero
+./after/plugin/lsp.lua:-- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
+./after/plugin/lsp.lua:require'lspconfig'.jinja_lsp.setup{}
+./after/plugin/lsp.lua:require'lspconfig'.r_language_server.setup{}
+./after/plugin/lsp.lua:require'lspconfig'.pyright.setup{}
+./after/plugin/lsp.lua:require('mason').setup({})
+./after/plugin/lsp.lua:require('mason-lspconfig').setup({
+./after/plugin/lsp.lua:  ensure_installed = {'r_language_server', 'lua_ls', 'r_language_server'},
+./after/plugin/lsp.lua:  handlers = {
+./after/plugin/lsp.lua:    lsp_zero.default_setup,
+./after/plugin/lsp.lua:    lua_ls = function()
+./after/plugin/lsp.lua:      local lua_opts = lsp_zero.nvim_lua_ls()
+./after/plugin/lsp.lua:      require('lspconfig').lua_ls.setup(lua_opts)
+./after/plugin/lsp.lua:    end,
+./after/plugin/lsp.lua:  }
+./after/plugin/lsp.lua:})
+./after/plugin/lsp.lua:local cmp = require('cmp')
+./after/plugin/lsp.lua:local cmp_select = {behavior = cmp.SelectBehavior.Select}
+./after/plugin/lsp.lua:-- this is the function that loads the extra snippets to luasnip
+./after/plugin/lsp.lua:-- from rafamadriz/friendly-snippets
+./after/plugin/lsp.lua:require('luasnip.loaders.from_vscode').lazy_load()
+./after/plugin/lsp.lua:cmp.setup({
+./after/plugin/lsp.lua:  sources = {
+./after/plugin/lsp.lua:    {name = 'path'},
+./after/plugin/lsp.lua:    {name = 'nvim_lsp'},
+./after/plugin/lsp.lua:    {name = 'nvim_lua'},
+./after/plugin/lsp.lua:    {name = 'luasnip', keyword_length = 2},
+./after/plugin/lsp.lua:    {name = 'buffer', keyword_length = 3},
+./after/plugin/lsp.lua:  },
+./after/plugin/lsp.lua:  formatting = lsp_zero.cmp_format({details = false}),
+./after/plugin/lsp.lua:  mapping = cmp.mapping.preset.insert({
+./after/plugin/lsp.lua:    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+./after/plugin/lsp.lua:    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+./after/plugin/lsp.lua:    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+./after/plugin/lsp.lua:    ['<C-Space>'] = cmp.mapping.complete(),
+./after/plugin/lsp.lua:  }),
+./after/plugin/lsp.lua:})
+./after/plugin/treesitter.lua:require'nvim-treesitter.configs'.setup {
+./after/plugin/treesitter.lua:  -- A list of parser names, or "all" (the five listed parsers should always be installed)
+./after/plugin/treesitter.lua:  ensure_installed = { "help", "javascript", "typescript", "r", "python", "c", "lua", "vim", "vimdoc", "query" },
+./after/plugin/treesitter.lua:  -- Install parsers synchronously (only applied to `ensure_installed`)
+./after/plugin/treesitter.lua:  sync_install = false,
+./after/plugin/treesitter.lua:  ignore_install = { "help" },
+./after/plugin/treesitter.lua:  -- Automatically install missing parsers when entering buffer
+./after/plugin/treesitter.lua:  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+./after/plugin/treesitter.lua:  auto_install = true,
+./after/plugin/treesitter.lua:  ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
+./after/plugin/treesitter.lua:  -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+./after/plugin/treesitter.lua:  highlight = {
+./after/plugin/treesitter.lua:    enable = true,
+./after/plugin/treesitter.lua:    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+./after/plugin/treesitter.lua:    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+./after/plugin/treesitter.lua:    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+./after/plugin/treesitter.lua:    -- Instead of true it can also be a list of languages
+./after/plugin/treesitter.lua:    additional_vim_regex_highlighting = false,
+./after/plugin/treesitter.lua:  },
+./after/plugin/treesitter.lua:}
+./after/plugin/harpoon.lua:local mark = require("harpoon.mark")
+./after/plugin/harpoon.lua:local ui = require("harpoon.ui")
+./after/plugin/harpoon.lua:vim.keymap.set("n", "<leader>a", mark.add_file)
+./after/plugin/harpoon.lua:vim.keymap.set("n", "<C-e>`", ui.toggle_quick_menu)
+./after/plugin/harpoon.lua:vim.keymap.set("n", "<C-h>`", function() ui.nav_file(1) end)
+./after/plugin/harpoon.lua:vim.keymap.set("n", "<C-t>`", function() ui.nav_file(2) end)
+./after/plugin/harpoon.lua:vim.keymap.set("n", "<C-n>`", function() ui.nav_file(3) end)
+./after/plugin/harpoon.lua:vim.keymap.set("n", "<C-s>`", function() ui.nav_file(4) end)
+./after/plugin/undotree.lua:vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+./.git/config:[core]
+./.git/config:	repositoryformatversion = 0
+./.git/config:	filemode = true
+./.git/config:	bare = false
+./.git/config:	logallrefupdates = true
+./.git/config:	ignorecase = true
+./.git/config:[remote "origin"]
+./.git/config:	url = https://github.com/erikwestlund/neovim.git
+./.git/config:	fetch = +refs/heads/*:refs/remotes/origin/*
+./.git/config:[branch "main"]
+./.git/config:	remote = origin
+./.git/config:	merge = refs/heads/main
+Binary file ./.git/objects/pack/pack-6ff2b176c3774ea6459e17238671c0c5614f89f5.rev matches
+Binary file ./.git/objects/pack/pack-6ff2b176c3774ea6459e17238671c0c5614f89f5.pack matches
+Binary file ./.git/objects/pack/pack-6ff2b176c3774ea6459e17238671c0c5614f89f5.idx matches
+./.git/HEAD:ref: refs/heads/main
+./.git/info/exclude:# git ls-files --others --exclude-from=.git/info/exclude
+./.git/info/exclude:# Lines that start with '#' are comments.
+./.git/info/exclude:# For a project mostly in C, the following would be a good set of
+./.git/info/exclude:# exclude patterns (uncomment them if you want to use them):
+./.git/info/exclude:# *.[oa]
+./.git/info/exclude:# *~
+./.git/logs/HEAD:0000000000000000000000000000000000000000 f63d591bd5a9bac31be825f2ccdfe1438f885425 Erik Westlund <erikwestlund@hey.com> 1711279819 -0400	clone: from https://github.com/erikwestlund/neovim.git
+./.git/logs/refs/heads/main:0000000000000000000000000000000000000000 f63d591bd5a9bac31be825f2ccdfe1438f885425 Erik Westlund <erikwestlund@hey.com> 1711279819 -0400	clone: from https://github.com/erikwestlund/neovim.git
+./.git/logs/refs/remotes/origin/HEAD:0000000000000000000000000000000000000000 f63d591bd5a9bac31be825f2ccdfe1438f885425 Erik Westlund <erikwestlund@hey.com> 1711279819 -0400	clone: from https://github.com/erikwestlund/neovim.git
+./.git/description:Unnamed repository; edit this file 'description' to name the repository.
+./.git/hooks/commit-msg.sample:#!/bin/sh
+./.git/hooks/commit-msg.sample:#
+./.git/hooks/commit-msg.sample:# An example hook script to check the commit log message.
+./.git/hooks/commit-msg.sample:# Called by "git commit" with one argument, the name of the file
+./.git/hooks/commit-msg.sample:# that has the commit message.  The hook should exit with non-zero
+./.git/hooks/commit-msg.sample:# status after issuing an appropriate message if it wants to stop the
+./.git/hooks/commit-msg.sample:# commit.  The hook is allowed to edit the commit message file.
+./.git/hooks/commit-msg.sample:#
+./.git/hooks/commit-msg.sample:# To enable this hook, rename this file to "commit-msg".
+./.git/hooks/commit-msg.sample:# Uncomment the below to add a Signed-off-by line to the message.
+./.git/hooks/commit-msg.sample:# Doing this in a hook is a bad idea in general, but the prepare-commit-msg
+./.git/hooks/commit-msg.sample:# hook is more suited to it.
+./.git/hooks/commit-msg.sample:#
+./.git/hooks/commit-msg.sample:# SOB=$(git var GIT_AUTHOR_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
+./.git/hooks/commit-msg.sample:# grep -qs "^$SOB" "$1" || echo "$SOB" >> "$1"
+./.git/hooks/commit-msg.sample:# This example catches duplicate Signed-off-by lines.
+./.git/hooks/commit-msg.sample:test "" = "$(grep '^Signed-off-by: ' "$1" |
+./.git/hooks/commit-msg.sample:	 sort | uniq -c | sed -e '/^[ 	]*1[ 	]/d')" || {
+./.git/hooks/commit-msg.sample:	echo >&2 Duplicate Signed-off-by lines.
+./.git/hooks/commit-msg.sample:	exit 1
+./.git/hooks/commit-msg.sample:}
+./.git/hooks/pre-rebase.sample:#!/bin/sh
+./.git/hooks/pre-rebase.sample:#
+./.git/hooks/pre-rebase.sample:# Copyright (c) 2006, 2008 Junio C Hamano
+./.git/hooks/pre-rebase.sample:#
+./.git/hooks/pre-rebase.sample:# The "pre-rebase" hook is run just before "git rebase" starts doing
+./.git/hooks/pre-rebase.sample:# its job, and can prevent the command from running by exiting with
+./.git/hooks/pre-rebase.sample:# non-zero status.
+./.git/hooks/pre-rebase.sample:#
+./.git/hooks/pre-rebase.sample:# The hook is called with the following parameters:
+./.git/hooks/pre-rebase.sample:#
+./.git/hooks/pre-rebase.sample:# $1 -- the upstream the series was forked from.
+./.git/hooks/pre-rebase.sample:# $2 -- the branch being rebased (or empty when rebasing the current branch).
+./.git/hooks/pre-rebase.sample:#
+./.git/hooks/pre-rebase.sample:# This sample shows how to prevent topic branches that are already
+./.git/hooks/pre-rebase.sample:# merged to 'next' branch from getting rebased, because allowing it
+./.git/hooks/pre-rebase.sample:# would result in rebasing already published history.
+./.git/hooks/pre-rebase.sample:publish=next
+./.git/hooks/pre-rebase.sample:basebranch="$1"
+./.git/hooks/pre-rebase.sample:if test "$#" = 2
+./.git/hooks/pre-rebase.sample:then
+./.git/hooks/pre-rebase.sample:	topic="refs/heads/$2"
+./.git/hooks/pre-rebase.sample:else
+./.git/hooks/pre-rebase.sample:	topic=`git symbolic-ref HEAD` ||
+./.git/hooks/pre-rebase.sample:	exit 0 ;# we do not interrupt rebasing detached HEAD
+./.git/hooks/pre-rebase.sample:fi
+./.git/hooks/pre-rebase.sample:case "$topic" in
+./.git/hooks/pre-rebase.sample:refs/heads/??/*)
+./.git/hooks/pre-rebase.sample:	;;
+./.git/hooks/pre-rebase.sample:*)
+./.git/hooks/pre-rebase.sample:	exit 0 ;# we do not interrupt others.
+./.git/hooks/pre-rebase.sample:	;;
+./.git/hooks/pre-rebase.sample:esac
+./.git/hooks/pre-rebase.sample:# Now we are dealing with a topic branch being rebased
+./.git/hooks/pre-rebase.sample:# on top of master.  Is it OK to rebase it?
+./.git/hooks/pre-rebase.sample:# Does the topic really exist?
+./.git/hooks/pre-rebase.sample:git show-ref -q "$topic" || {
+./.git/hooks/pre-rebase.sample:	echo >&2 "No such branch $topic"
+./.git/hooks/pre-rebase.sample:	exit 1
+./.git/hooks/pre-rebase.sample:}
+./.git/hooks/pre-rebase.sample:# Is topic fully merged to master?
+./.git/hooks/pre-rebase.sample:not_in_master=`git rev-list --pretty=oneline ^master "$topic"`
+./.git/hooks/pre-rebase.sample:if test -z "$not_in_master"
+./.git/hooks/pre-rebase.sample:then
+./.git/hooks/pre-rebase.sample:	echo >&2 "$topic is fully merged to master; better remove it."
+./.git/hooks/pre-rebase.sample:	exit 1 ;# we could allow it, but there is no point.
+./.git/hooks/pre-rebase.sample:fi
+./.git/hooks/pre-rebase.sample:# Is topic ever merged to next?  If so you should not be rebasing it.
+./.git/hooks/pre-rebase.sample:only_next_1=`git rev-list ^master "^$topic" ${publish} | sort`
+./.git/hooks/pre-rebase.sample:only_next_2=`git rev-list ^master           ${publish} | sort`
+./.git/hooks/pre-rebase.sample:if test "$only_next_1" = "$only_next_2"
+./.git/hooks/pre-rebase.sample:then
+./.git/hooks/pre-rebase.sample:	not_in_topic=`git rev-list "^$topic" master`
+./.git/hooks/pre-rebase.sample:	if test -z "$not_in_topic"
+./.git/hooks/pre-rebase.sample:	then
+./.git/hooks/pre-rebase.sample:		echo >&2 "$topic is already up to date with master"
+./.git/hooks/pre-rebase.sample:		exit 1 ;# we could allow it, but there is no point.
+./.git/hooks/pre-rebase.sample:	else
+./.git/hooks/pre-rebase.sample:		exit 0
+./.git/hooks/pre-rebase.sample:	fi
+./.git/hooks/pre-rebase.sample:else
+./.git/hooks/pre-rebase.sample:	not_in_next=`git rev-list --pretty=oneline ^${publish} "$topic"`
+./.git/hooks/pre-rebase.sample:	/usr/bin/perl -e '
+./.git/hooks/pre-rebase.sample:		my $topic = $ARGV[0];
+./.git/hooks/pre-rebase.sample:		my $msg = "* $topic has commits already merged to public branch:\n";
+./.git/hooks/pre-rebase.sample:		my (%not_in_next) = map {
+./.git/hooks/pre-rebase.sample:			/^([0-9a-f]+) /;
+./.git/hooks/pre-rebase.sample:			($1 => 1);
+./.git/hooks/pre-rebase.sample:		} split(/\n/, $ARGV[1]);
+./.git/hooks/pre-rebase.sample:		for my $elem (map {
+./.git/hooks/pre-rebase.sample:				/^([0-9a-f]+) (.*)$/;
+./.git/hooks/pre-rebase.sample:				[$1 => $2];
+./.git/hooks/pre-rebase.sample:			} split(/\n/, $ARGV[2])) {
+./.git/hooks/pre-rebase.sample:			if (!exists $not_in_next{$elem->[0]}) {
+./.git/hooks/pre-rebase.sample:				if ($msg) {
+./.git/hooks/pre-rebase.sample:					print STDERR $msg;
+./.git/hooks/pre-rebase.sample:					undef $msg;
+./.git/hooks/pre-rebase.sample:				}
+./.git/hooks/pre-rebase.sample:				print STDERR " $elem->[1]\n";
+./.git/hooks/pre-rebase.sample:			}
+./.git/hooks/pre-rebase.sample:		}
+./.git/hooks/pre-rebase.sample:	' "$topic" "$not_in_next" "$not_in_master"
+./.git/hooks/pre-rebase.sample:	exit 1
+./.git/hooks/pre-rebase.sample:fi
+./.git/hooks/pre-rebase.sample:<<\DOC_END
+./.git/hooks/pre-rebase.sample:This sample hook safeguards topic branches that have been
+./.git/hooks/pre-rebase.sample:published from being rewound.
+./.git/hooks/pre-rebase.sample:The workflow assumed here is:
+./.git/hooks/pre-rebase.sample: * Once a topic branch forks from "master", "master" is never
+./.git/hooks/pre-rebase.sample:   merged into it again (either directly or indirectly).
+./.git/hooks/pre-rebase.sample: * Once a topic branch is fully cooked and merged into "master",
+./.git/hooks/pre-rebase.sample:   it is deleted.  If you need to build on top of it to correct
+./.git/hooks/pre-rebase.sample:   earlier mistakes, a new topic branch is created by forking at
+./.git/hooks/pre-rebase.sample:   the tip of the "master".  This is not strictly necessary, but
+./.git/hooks/pre-rebase.sample:   it makes it easier to keep your history simple.
+./.git/hooks/pre-rebase.sample: * Whenever you need to test or publish your changes to topic
+./.git/hooks/pre-rebase.sample:   branches, merge them into "next" branch.
+./.git/hooks/pre-rebase.sample:The script, being an example, hardcodes the publish branch name
+./.git/hooks/pre-rebase.sample:to be "next", but it is trivial to make it configurable via
+./.git/hooks/pre-rebase.sample:$GIT_DIR/config mechanism.
+./.git/hooks/pre-rebase.sample:With this workflow, you would want to know:
+./.git/hooks/pre-rebase.sample:(1) ... if a topic branch has ever been merged to "next".  Young
+./.git/hooks/pre-rebase.sample:    topic branches can have stupid mistakes you would rather
+./.git/hooks/pre-rebase.sample:    clean up before publishing, and things that have not been
+./.git/hooks/pre-rebase.sample:    merged into other branches can be easily rebased without
+./.git/hooks/pre-rebase.sample:    affecting other people.  But once it is published, you would
+./.git/hooks/pre-rebase.sample:    not want to rewind it.
+./.git/hooks/pre-rebase.sample:(2) ... if a topic branch has been fully merged to "master".
+./.git/hooks/pre-rebase.sample:    Then you can delete it.  More importantly, you should not
+./.git/hooks/pre-rebase.sample:    build on top of it -- other people may already want to
+./.git/hooks/pre-rebase.sample:    change things related to the topic as patches against your
+./.git/hooks/pre-rebase.sample:    "master", so if you need further changes, it is better to
+./.git/hooks/pre-rebase.sample:    fork the topic (perhaps with the same name) afresh from the
+./.git/hooks/pre-rebase.sample:    tip of "master".
+./.git/hooks/pre-rebase.sample:Let's look at this example:
+./.git/hooks/pre-rebase.sample:		   o---o---o---o---o---o---o---o---o---o "next"
+./.git/hooks/pre-rebase.sample:		  /       /           /           /
+./.git/hooks/pre-rebase.sample:		 /   a---a---b A     /           /
+./.git/hooks/pre-rebase.sample:		/   /               /           /
+./.git/hooks/pre-rebase.sample:	       /   /   c---c---c---c B         /
+./.git/hooks/pre-rebase.sample:	      /   /   /             \         /
+./.git/hooks/pre-rebase.sample:	     /   /   /   b---b C     \       /
+./.git/hooks/pre-rebase.sample:	    /   /   /   /             \     /
+./.git/hooks/pre-rebase.sample:    ---o---o---o---o---o---o---o---o---o---o---o "master"
+./.git/hooks/pre-rebase.sample:A, B and C are topic branches.
+./.git/hooks/pre-rebase.sample: * A has one fix since it was merged up to "next".
+./.git/hooks/pre-rebase.sample: * B has finished.  It has been fully merged up to "master" and "next",
+./.git/hooks/pre-rebase.sample:   and is ready to be deleted.
+./.git/hooks/pre-rebase.sample: * C has not merged to "next" at all.
+./.git/hooks/pre-rebase.sample:We would want to allow C to be rebased, refuse A, and encourage
+./.git/hooks/pre-rebase.sample:B to be deleted.
+./.git/hooks/pre-rebase.sample:To compute (1):
+./.git/hooks/pre-rebase.sample:	git rev-list ^master ^topic next
+./.git/hooks/pre-rebase.sample:	git rev-list ^master        next
+./.git/hooks/pre-rebase.sample:	if these match, topic has not merged in next at all.
+./.git/hooks/pre-rebase.sample:To compute (2):
+./.git/hooks/pre-rebase.sample:	git rev-list master..topic
+./.git/hooks/pre-rebase.sample:	if this is empty, it is fully merged to "master".
+./.git/hooks/pre-rebase.sample:DOC_END
+./.git/hooks/sendemail-validate.sample:#!/bin/sh
+./.git/hooks/sendemail-validate.sample:# An example hook script to validate a patch (and/or patch series) before
+./.git/hooks/sendemail-validate.sample:# sending it via email.
+./.git/hooks/sendemail-validate.sample:#
+./.git/hooks/sendemail-validate.sample:# The hook should exit with non-zero status after issuing an appropriate
+./.git/hooks/sendemail-validate.sample:# message if it wants to prevent the email(s) from being sent.
+./.git/hooks/sendemail-validate.sample:#
+./.git/hooks/sendemail-validate.sample:# To enable this hook, rename this file to "sendemail-validate".
+./.git/hooks/sendemail-validate.sample:#
+./.git/hooks/sendemail-validate.sample:# By default, it will only check that the patch(es) can be applied on top of
+./.git/hooks/sendemail-validate.sample:# the default upstream branch without conflicts in a secondary worktree. After
+./.git/hooks/sendemail-validate.sample:# validation (successful or not) of the last patch of a series, the worktree
+./.git/hooks/sendemail-validate.sample:# will be deleted.
+./.git/hooks/sendemail-validate.sample:#
+./.git/hooks/sendemail-validate.sample:# The following config variables can be set to change the default remote and
+./.git/hooks/sendemail-validate.sample:# remote ref that are used to apply the patches against:
+./.git/hooks/sendemail-validate.sample:#
+./.git/hooks/sendemail-validate.sample:#   sendemail.validateRemote (default: origin)
+./.git/hooks/sendemail-validate.sample:#   sendemail.validateRemoteRef (default: HEAD)
+./.git/hooks/sendemail-validate.sample:#
+./.git/hooks/sendemail-validate.sample:# Replace the TODO placeholders with appropriate checks according to your
+./.git/hooks/sendemail-validate.sample:# needs.
+./.git/hooks/sendemail-validate.sample:validate_cover_letter () {
+./.git/hooks/sendemail-validate.sample:	file="$1"
+./.git/hooks/sendemail-validate.sample:	# TODO: Replace with appropriate checks (e.g. spell checking).
+./.git/hooks/sendemail-validate.sample:	true
+./.git/hooks/sendemail-validate.sample:}
+./.git/hooks/sendemail-validate.sample:validate_patch () {
+./.git/hooks/sendemail-validate.sample:	file="$1"
+./.git/hooks/sendemail-validate.sample:	# Ensure that the patch applies without conflicts.
+./.git/hooks/sendemail-validate.sample:	git am -3 "$file" || return
+./.git/hooks/sendemail-validate.sample:	# TODO: Replace with appropriate checks for this patch
+./.git/hooks/sendemail-validate.sample:	# (e.g. checkpatch.pl).
+./.git/hooks/sendemail-validate.sample:	true
+./.git/hooks/sendemail-validate.sample:}
+./.git/hooks/sendemail-validate.sample:validate_series () {
+./.git/hooks/sendemail-validate.sample:	# TODO: Replace with appropriate checks for the whole series
+./.git/hooks/sendemail-validate.sample:	# (e.g. quick build, coding style checks, etc.).
+./.git/hooks/sendemail-validate.sample:	true
+./.git/hooks/sendemail-validate.sample:}
+./.git/hooks/sendemail-validate.sample:# main -------------------------------------------------------------------------
+./.git/hooks/sendemail-validate.sample:if test "$GIT_SENDEMAIL_FILE_COUNTER" = 1
+./.git/hooks/sendemail-validate.sample:then
+./.git/hooks/sendemail-validate.sample:	remote=$(git config --default origin --get sendemail.validateRemote) &&
+./.git/hooks/sendemail-validate.sample:	ref=$(git config --default HEAD --get sendemail.validateRemoteRef) &&
+./.git/hooks/sendemail-validate.sample:	worktree=$(mktemp --tmpdir -d sendemail-validate.XXXXXXX) &&
+./.git/hooks/sendemail-validate.sample:	git worktree add -fd --checkout "$worktree" "refs/remotes/$remote/$ref" &&
+./.git/hooks/sendemail-validate.sample:	git config --replace-all sendemail.validateWorktree "$worktree"
+./.git/hooks/sendemail-validate.sample:else
+./.git/hooks/sendemail-validate.sample:	worktree=$(git config --get sendemail.validateWorktree)
+./.git/hooks/sendemail-validate.sample:fi || {
+./.git/hooks/sendemail-validate.sample:	echo "sendemail-validate: error: failed to prepare worktree" >&2
+./.git/hooks/sendemail-validate.sample:	exit 1
+./.git/hooks/sendemail-validate.sample:}
+./.git/hooks/sendemail-validate.sample:unset GIT_DIR GIT_WORK_TREE
+./.git/hooks/sendemail-validate.sample:cd "$worktree" &&
+./.git/hooks/sendemail-validate.sample:if grep -q "^diff --git " "$1"
+./.git/hooks/sendemail-validate.sample:then
+./.git/hooks/sendemail-validate.sample:	validate_patch "$1"
+./.git/hooks/sendemail-validate.sample:else
+./.git/hooks/sendemail-validate.sample:	validate_cover_letter "$1"
+./.git/hooks/sendemail-validate.sample:fi &&
+./.git/hooks/sendemail-validate.sample:if test "$GIT_SENDEMAIL_FILE_COUNTER" = "$GIT_SENDEMAIL_FILE_TOTAL"
+./.git/hooks/sendemail-validate.sample:then
+./.git/hooks/sendemail-validate.sample:	git config --unset-all sendemail.validateWorktree &&
+./.git/hooks/sendemail-validate.sample:	trap 'git worktree remove -ff "$worktree"' EXIT &&
+./.git/hooks/sendemail-validate.sample:	validate_series
+./.git/hooks/sendemail-validate.sample:fi
+./.git/hooks/pre-commit.sample:#!/bin/sh
+./.git/hooks/pre-commit.sample:#
+./.git/hooks/pre-commit.sample:# An example hook script to verify what is about to be committed.
+./.git/hooks/pre-commit.sample:# Called by "git commit" with no arguments.  The hook should
+./.git/hooks/pre-commit.sample:# exit with non-zero status after issuing an appropriate message if
+./.git/hooks/pre-commit.sample:# it wants to stop the commit.
+./.git/hooks/pre-commit.sample:#
+./.git/hooks/pre-commit.sample:# To enable this hook, rename this file to "pre-commit".
+./.git/hooks/pre-commit.sample:if git rev-parse --verify HEAD >/dev/null 2>&1
+./.git/hooks/pre-commit.sample:then
+./.git/hooks/pre-commit.sample:	against=HEAD
+./.git/hooks/pre-commit.sample:else
+./.git/hooks/pre-commit.sample:	# Initial commit: diff against an empty tree object
+./.git/hooks/pre-commit.sample:	against=$(git hash-object -t tree /dev/null)
+./.git/hooks/pre-commit.sample:fi
+./.git/hooks/pre-commit.sample:# If you want to allow non-ASCII filenames set this variable to true.
+./.git/hooks/pre-commit.sample:allownonascii=$(git config --type=bool hooks.allownonascii)
+./.git/hooks/pre-commit.sample:# Redirect output to stderr.
+./.git/hooks/pre-commit.sample:exec 1>&2
+./.git/hooks/pre-commit.sample:# Cross platform projects tend to avoid non-ASCII filenames; prevent
+./.git/hooks/pre-commit.sample:# them from being added to the repository. We exploit the fact that the
+./.git/hooks/pre-commit.sample:# printable range starts at the space character and ends with tilde.
+./.git/hooks/pre-commit.sample:if [ "$allownonascii" != "true" ] &&
+./.git/hooks/pre-commit.sample:	# Note that the use of brackets around a tr range is ok here, (it's
+./.git/hooks/pre-commit.sample:	# even required, for portability to Solaris 10's /usr/bin/tr), since
+./.git/hooks/pre-commit.sample:	# the square bracket bytes happen to fall in the designated range.
+./.git/hooks/pre-commit.sample:	test $(git diff --cached --name-only --diff-filter=A -z $against |
+./.git/hooks/pre-commit.sample:	  LC_ALL=C tr -d '[ -~]\0' | wc -c) != 0
+./.git/hooks/pre-commit.sample:then
+./.git/hooks/pre-commit.sample:	cat <<\EOF
+./.git/hooks/pre-commit.sample:Error: Attempt to add a non-ASCII file name.
+./.git/hooks/pre-commit.sample:This can cause problems if you want to work with people on other platforms.
+./.git/hooks/pre-commit.sample:To be portable it is advisable to rename the file.
+./.git/hooks/pre-commit.sample:If you know what you are doing you can disable this check using:
+./.git/hooks/pre-commit.sample:  git config hooks.allownonascii true
+./.git/hooks/pre-commit.sample:EOF
+./.git/hooks/pre-commit.sample:	exit 1
+./.git/hooks/pre-commit.sample:fi
+./.git/hooks/pre-commit.sample:# If there are whitespace errors, print the offending file names and fail.
+./.git/hooks/pre-commit.sample:exec git diff-index --check --cached $against --
+./.git/hooks/applypatch-msg.sample:#!/bin/sh
+./.git/hooks/applypatch-msg.sample:#
+./.git/hooks/applypatch-msg.sample:# An example hook script to check the commit log message taken by
+./.git/hooks/applypatch-msg.sample:# applypatch from an e-mail message.
+./.git/hooks/applypatch-msg.sample:#
+./.git/hooks/applypatch-msg.sample:# The hook should exit with non-zero status after issuing an
+./.git/hooks/applypatch-msg.sample:# appropriate message if it wants to stop the commit.  The hook is
+./.git/hooks/applypatch-msg.sample:# allowed to edit the commit message file.
+./.git/hooks/applypatch-msg.sample:#
+./.git/hooks/applypatch-msg.sample:# To enable this hook, rename this file to "applypatch-msg".
+./.git/hooks/applypatch-msg.sample:. git-sh-setup
+./.git/hooks/applypatch-msg.sample:commitmsg="$(git rev-parse --git-path hooks/commit-msg)"
+./.git/hooks/applypatch-msg.sample:test -x "$commitmsg" && exec "$commitmsg" ${1+"$@"}
+./.git/hooks/applypatch-msg.sample::
+./.git/hooks/fsmonitor-watchman.sample:#!/usr/bin/perl
+./.git/hooks/fsmonitor-watchman.sample:use strict;
+./.git/hooks/fsmonitor-watchman.sample:use warnings;
+./.git/hooks/fsmonitor-watchman.sample:use IPC::Open2;
+./.git/hooks/fsmonitor-watchman.sample:# An example hook script to integrate Watchman
+./.git/hooks/fsmonitor-watchman.sample:# (https://facebook.github.io/watchman/) with git to speed up detecting
+./.git/hooks/fsmonitor-watchman.sample:# new and modified files.
+./.git/hooks/fsmonitor-watchman.sample:#
+./.git/hooks/fsmonitor-watchman.sample:# The hook is passed a version (currently 2) and last update token
+./.git/hooks/fsmonitor-watchman.sample:# formatted as a string and outputs to stdout a new update token and
+./.git/hooks/fsmonitor-watchman.sample:# all files that have been modified since the update token. Paths must
+./.git/hooks/fsmonitor-watchman.sample:# be relative to the root of the working tree and separated by a single NUL.
+./.git/hooks/fsmonitor-watchman.sample:#
+./.git/hooks/fsmonitor-watchman.sample:# To enable this hook, rename this file to "query-watchman" and set
+./.git/hooks/fsmonitor-watchman.sample:# 'git config core.fsmonitor .git/hooks/query-watchman'
+./.git/hooks/fsmonitor-watchman.sample:#
+./.git/hooks/fsmonitor-watchman.sample:my ($version, $last_update_token) = @ARGV;
+./.git/hooks/fsmonitor-watchman.sample:# Uncomment for debugging
+./.git/hooks/fsmonitor-watchman.sample:# print STDERR "$0 $version $last_update_token\n";
+./.git/hooks/fsmonitor-watchman.sample:# Check the hook interface version
+./.git/hooks/fsmonitor-watchman.sample:if ($version ne 2) {
+./.git/hooks/fsmonitor-watchman.sample:	die "Unsupported query-fsmonitor hook version '$version'.\n" .
+./.git/hooks/fsmonitor-watchman.sample:	    "Falling back to scanning...\n";
+./.git/hooks/fsmonitor-watchman.sample:}
+./.git/hooks/fsmonitor-watchman.sample:my $git_work_tree = get_working_dir();
+./.git/hooks/fsmonitor-watchman.sample:my $retry = 1;
+./.git/hooks/fsmonitor-watchman.sample:my $json_pkg;
+./.git/hooks/fsmonitor-watchman.sample:eval {
+./.git/hooks/fsmonitor-watchman.sample:	require JSON::XS;
+./.git/hooks/fsmonitor-watchman.sample:	$json_pkg = "JSON::XS";
+./.git/hooks/fsmonitor-watchman.sample:	1;
+./.git/hooks/fsmonitor-watchman.sample:} or do {
+./.git/hooks/fsmonitor-watchman.sample:	require JSON::PP;
+./.git/hooks/fsmonitor-watchman.sample:	$json_pkg = "JSON::PP";
+./.git/hooks/fsmonitor-watchman.sample:};
+./.git/hooks/fsmonitor-watchman.sample:launch_watchman();
+./.git/hooks/fsmonitor-watchman.sample:sub launch_watchman {
+./.git/hooks/fsmonitor-watchman.sample:	my $o = watchman_query();
+./.git/hooks/fsmonitor-watchman.sample:	if (is_work_tree_watched($o)) {
+./.git/hooks/fsmonitor-watchman.sample:		output_result($o->{clock}, @{$o->{files}});
+./.git/hooks/fsmonitor-watchman.sample:	}
+./.git/hooks/fsmonitor-watchman.sample:}
+./.git/hooks/fsmonitor-watchman.sample:sub output_result {
+./.git/hooks/fsmonitor-watchman.sample:	my ($clockid, @files) = @_;
+./.git/hooks/fsmonitor-watchman.sample:	# Uncomment for debugging watchman output
+./.git/hooks/fsmonitor-watchman.sample:	# open (my $fh, ">", ".git/watchman-output.out");
+./.git/hooks/fsmonitor-watchman.sample:	# binmode $fh, ":utf8";
+./.git/hooks/fsmonitor-watchman.sample:	# print $fh "$clockid\n@files\n";
+./.git/hooks/fsmonitor-watchman.sample:	# close $fh;
+./.git/hooks/fsmonitor-watchman.sample:	binmode STDOUT, ":utf8";
+./.git/hooks/fsmonitor-watchman.sample:	print $clockid;
+./.git/hooks/fsmonitor-watchman.sample:	print "\0";
+./.git/hooks/fsmonitor-watchman.sample:	local $, = "\0";
+./.git/hooks/fsmonitor-watchman.sample:	print @files;
+./.git/hooks/fsmonitor-watchman.sample:}
+./.git/hooks/fsmonitor-watchman.sample:sub watchman_clock {
+./.git/hooks/fsmonitor-watchman.sample:	my $response = qx/watchman clock "$git_work_tree"/;
+./.git/hooks/fsmonitor-watchman.sample:	die "Failed to get clock id on '$git_work_tree'.\n" .
+./.git/hooks/fsmonitor-watchman.sample:		"Falling back to scanning...\n" if $? != 0;
+./.git/hooks/fsmonitor-watchman.sample:	return $json_pkg->new->utf8->decode($response);
+./.git/hooks/fsmonitor-watchman.sample:}
+./.git/hooks/fsmonitor-watchman.sample:sub watchman_query {
+./.git/hooks/fsmonitor-watchman.sample:	my $pid = open2(\*CHLD_OUT, \*CHLD_IN, 'watchman -j --no-pretty')
+./.git/hooks/fsmonitor-watchman.sample:	or die "open2() failed: $!\n" .
+./.git/hooks/fsmonitor-watchman.sample:	"Falling back to scanning...\n";
+./.git/hooks/fsmonitor-watchman.sample:	# In the query expression below we're asking for names of files that
+./.git/hooks/fsmonitor-watchman.sample:	# changed since $last_update_token but not from the .git folder.
+./.git/hooks/fsmonitor-watchman.sample:	#
+./.git/hooks/fsmonitor-watchman.sample:	# To accomplish this, we're using the "since" generator to use the
+./.git/hooks/fsmonitor-watchman.sample:	# recency index to select candidate nodes and "fields" to limit the
+./.git/hooks/fsmonitor-watchman.sample:	# output to file names only. Then we're using the "expression" term to
+./.git/hooks/fsmonitor-watchman.sample:	# further constrain the results.
+./.git/hooks/fsmonitor-watchman.sample:	my $last_update_line = "";
+./.git/hooks/fsmonitor-watchman.sample:	if (substr($last_update_token, 0, 1) eq "c") {
+./.git/hooks/fsmonitor-watchman.sample:		$last_update_token = "\"$last_update_token\"";
+./.git/hooks/fsmonitor-watchman.sample:		$last_update_line = qq[\n"since": $last_update_token,];
+./.git/hooks/fsmonitor-watchman.sample:	}
+./.git/hooks/fsmonitor-watchman.sample:	my $query = <<"	END";
+./.git/hooks/fsmonitor-watchman.sample:		["query", "$git_work_tree", {$last_update_line
+./.git/hooks/fsmonitor-watchman.sample:			"fields": ["name"],
+./.git/hooks/fsmonitor-watchman.sample:			"expression": ["not", ["dirname", ".git"]]
+./.git/hooks/fsmonitor-watchman.sample:		}]
+./.git/hooks/fsmonitor-watchman.sample:	END
+./.git/hooks/fsmonitor-watchman.sample:	# Uncomment for debugging the watchman query
+./.git/hooks/fsmonitor-watchman.sample:	# open (my $fh, ">", ".git/watchman-query.json");
+./.git/hooks/fsmonitor-watchman.sample:	# print $fh $query;
+./.git/hooks/fsmonitor-watchman.sample:	# close $fh;
+./.git/hooks/fsmonitor-watchman.sample:	print CHLD_IN $query;
+./.git/hooks/fsmonitor-watchman.sample:	close CHLD_IN;
+./.git/hooks/fsmonitor-watchman.sample:	my $response = do {local $/; <CHLD_OUT>};
+./.git/hooks/fsmonitor-watchman.sample:	# Uncomment for debugging the watch response
+./.git/hooks/fsmonitor-watchman.sample:	# open ($fh, ">", ".git/watchman-response.json");
+./.git/hooks/fsmonitor-watchman.sample:	# print $fh $response;
+./.git/hooks/fsmonitor-watchman.sample:	# close $fh;
+./.git/hooks/fsmonitor-watchman.sample:	die "Watchman: command returned no output.\n" .
+./.git/hooks/fsmonitor-watchman.sample:	"Falling back to scanning...\n" if $response eq "";
+./.git/hooks/fsmonitor-watchman.sample:	die "Watchman: command returned invalid output: $response\n" .
+./.git/hooks/fsmonitor-watchman.sample:	"Falling back to scanning...\n" unless $response =~ /^\{/;
+./.git/hooks/fsmonitor-watchman.sample:	return $json_pkg->new->utf8->decode($response);
+./.git/hooks/fsmonitor-watchman.sample:}
+./.git/hooks/fsmonitor-watchman.sample:sub is_work_tree_watched {
+./.git/hooks/fsmonitor-watchman.sample:	my ($output) = @_;
+./.git/hooks/fsmonitor-watchman.sample:	my $error = $output->{error};
+./.git/hooks/fsmonitor-watchman.sample:	if ($retry > 0 and $error and $error =~ m/unable to resolve root .* directory (.*) is not watched/) {
+./.git/hooks/fsmonitor-watchman.sample:		$retry--;
+./.git/hooks/fsmonitor-watchman.sample:		my $response = qx/watchman watch "$git_work_tree"/;
+./.git/hooks/fsmonitor-watchman.sample:		die "Failed to make watchman watch '$git_work_tree'.\n" .
+./.git/hooks/fsmonitor-watchman.sample:		    "Falling back to scanning...\n" if $? != 0;
+./.git/hooks/fsmonitor-watchman.sample:		$output = $json_pkg->new->utf8->decode($response);
+./.git/hooks/fsmonitor-watchman.sample:		$error = $output->{error};
+./.git/hooks/fsmonitor-watchman.sample:		die "Watchman: $error.\n" .
+./.git/hooks/fsmonitor-watchman.sample:		"Falling back to scanning...\n" if $error;
+./.git/hooks/fsmonitor-watchman.sample:		# Uncomment for debugging watchman output
+./.git/hooks/fsmonitor-watchman.sample:		# open (my $fh, ">", ".git/watchman-output.out");
+./.git/hooks/fsmonitor-watchman.sample:		# close $fh;
+./.git/hooks/fsmonitor-watchman.sample:		# Watchman will always return all files on the first query so
+./.git/hooks/fsmonitor-watchman.sample:		# return the fast "everything is dirty" flag to git and do the
+./.git/hooks/fsmonitor-watchman.sample:		# Watchman query just to get it over with now so we won't pay
+./.git/hooks/fsmonitor-watchman.sample:		# the cost in git to look up each individual file.
+./.git/hooks/fsmonitor-watchman.sample:		my $o = watchman_clock();
+./.git/hooks/fsmonitor-watchman.sample:		$error = $output->{error};
+./.git/hooks/fsmonitor-watchman.sample:		die "Watchman: $error.\n" .
+./.git/hooks/fsmonitor-watchman.sample:		"Falling back to scanning...\n" if $error;
+./.git/hooks/fsmonitor-watchman.sample:		output_result($o->{clock}, ("/"));
+./.git/hooks/fsmonitor-watchman.sample:		$last_update_token = $o->{clock};
+./.git/hooks/fsmonitor-watchman.sample:		eval { launch_watchman() };
+./.git/hooks/fsmonitor-watchman.sample:		return 0;
+./.git/hooks/fsmonitor-watchman.sample:	}
+./.git/hooks/fsmonitor-watchman.sample:	die "Watchman: $error.\n" .
+./.git/hooks/fsmonitor-watchman.sample:	"Falling back to scanning...\n" if $error;
+./.git/hooks/fsmonitor-watchman.sample:	return 1;
+./.git/hooks/fsmonitor-watchman.sample:}
+./.git/hooks/fsmonitor-watchman.sample:sub get_working_dir {
+./.git/hooks/fsmonitor-watchman.sample:	my $working_dir;
+./.git/hooks/fsmonitor-watchman.sample:	if ($^O =~ 'msys' || $^O =~ 'cygwin') {
+./.git/hooks/fsmonitor-watchman.sample:		$working_dir = Win32::GetCwd();
+./.git/hooks/fsmonitor-watchman.sample:		$working_dir =~ tr/\\/\//;
+./.git/hooks/fsmonitor-watchman.sample:	} else {
+./.git/hooks/fsmonitor-watchman.sample:		require Cwd;
+./.git/hooks/fsmonitor-watchman.sample:		$working_dir = Cwd::cwd();
+./.git/hooks/fsmonitor-watchman.sample:	}
+./.git/hooks/fsmonitor-watchman.sample:	return $working_dir;
+./.git/hooks/fsmonitor-watchman.sample:}
+./.git/hooks/pre-receive.sample:#!/bin/sh
+./.git/hooks/pre-receive.sample:#
+./.git/hooks/pre-receive.sample:# An example hook script to make use of push options.
+./.git/hooks/pre-receive.sample:# The example simply echoes all push options that start with 'echoback='
+./.git/hooks/pre-receive.sample:# and rejects all pushes when the "reject" push option is used.
+./.git/hooks/pre-receive.sample:#
+./.git/hooks/pre-receive.sample:# To enable this hook, rename this file to "pre-receive".
+./.git/hooks/pre-receive.sample:if test -n "$GIT_PUSH_OPTION_COUNT"
+./.git/hooks/pre-receive.sample:then
+./.git/hooks/pre-receive.sample:	i=0
+./.git/hooks/pre-receive.sample:	while test "$i" -lt "$GIT_PUSH_OPTION_COUNT"
+./.git/hooks/pre-receive.sample:	do
+./.git/hooks/pre-receive.sample:		eval "value=\$GIT_PUSH_OPTION_$i"
+./.git/hooks/pre-receive.sample:		case "$value" in
+./.git/hooks/pre-receive.sample:		echoback=*)
+./.git/hooks/pre-receive.sample:			echo "echo from the pre-receive-hook: ${value#*=}" >&2
+./.git/hooks/pre-receive.sample:			;;
+./.git/hooks/pre-receive.sample:		reject)
+./.git/hooks/pre-receive.sample:			exit 1
+./.git/hooks/pre-receive.sample:		esac
+./.git/hooks/pre-receive.sample:		i=$((i + 1))
+./.git/hooks/pre-receive.sample:	done
+./.git/hooks/pre-receive.sample:fi
+./.git/hooks/prepare-commit-msg.sample:#!/bin/sh
+./.git/hooks/prepare-commit-msg.sample:#
+./.git/hooks/prepare-commit-msg.sample:# An example hook script to prepare the commit log message.
+./.git/hooks/prepare-commit-msg.sample:# Called by "git commit" with the name of the file that has the
+./.git/hooks/prepare-commit-msg.sample:# commit message, followed by the description of the commit
+./.git/hooks/prepare-commit-msg.sample:# message's source.  The hook's purpose is to edit the commit
+./.git/hooks/prepare-commit-msg.sample:# message file.  If the hook fails with a non-zero status,
+./.git/hooks/prepare-commit-msg.sample:# the commit is aborted.
+./.git/hooks/prepare-commit-msg.sample:#
+./.git/hooks/prepare-commit-msg.sample:# To enable this hook, rename this file to "prepare-commit-msg".
+./.git/hooks/prepare-commit-msg.sample:# This hook includes three examples. The first one removes the
+./.git/hooks/prepare-commit-msg.sample:# "# Please enter the commit message..." help message.
+./.git/hooks/prepare-commit-msg.sample:#
+./.git/hooks/prepare-commit-msg.sample:# The second includes the output of "git diff --name-status -r"
+./.git/hooks/prepare-commit-msg.sample:# into the message, just before the "git status" output.  It is
+./.git/hooks/prepare-commit-msg.sample:# commented because it doesn't cope with --amend or with squashed
+./.git/hooks/prepare-commit-msg.sample:# commits.
+./.git/hooks/prepare-commit-msg.sample:#
+./.git/hooks/prepare-commit-msg.sample:# The third example adds a Signed-off-by line to the message, that can
+./.git/hooks/prepare-commit-msg.sample:# still be edited.  This is rarely a good idea.
+./.git/hooks/prepare-commit-msg.sample:COMMIT_MSG_FILE=$1
+./.git/hooks/prepare-commit-msg.sample:COMMIT_SOURCE=$2
+./.git/hooks/prepare-commit-msg.sample:SHA1=$3
+./.git/hooks/prepare-commit-msg.sample:/usr/bin/perl -i.bak -ne 'print unless(m/^. Please enter the commit message/..m/^#$/)' "$COMMIT_MSG_FILE"
+./.git/hooks/prepare-commit-msg.sample:# case "$COMMIT_SOURCE,$SHA1" in
+./.git/hooks/prepare-commit-msg.sample:#  ,|template,)
+./.git/hooks/prepare-commit-msg.sample:#    /usr/bin/perl -i.bak -pe '
+./.git/hooks/prepare-commit-msg.sample:#       print "\n" . `git diff --cached --name-status -r`
+./.git/hooks/prepare-commit-msg.sample:# 	 if /^#/ && $first++ == 0' "$COMMIT_MSG_FILE" ;;
+./.git/hooks/prepare-commit-msg.sample:#  *) ;;
+./.git/hooks/prepare-commit-msg.sample:# esac
+./.git/hooks/prepare-commit-msg.sample:# SOB=$(git var GIT_COMMITTER_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
+./.git/hooks/prepare-commit-msg.sample:# git interpret-trailers --in-place --trailer "$SOB" "$COMMIT_MSG_FILE"
+./.git/hooks/prepare-commit-msg.sample:# if test -z "$COMMIT_SOURCE"
+./.git/hooks/prepare-commit-msg.sample:# then
+./.git/hooks/prepare-commit-msg.sample:#   /usr/bin/perl -i.bak -pe 'print "\n" if !$first_line++' "$COMMIT_MSG_FILE"
+./.git/hooks/prepare-commit-msg.sample:# fi
+./.git/hooks/post-update.sample:#!/bin/sh
+./.git/hooks/post-update.sample:#
+./.git/hooks/post-update.sample:# An example hook script to prepare a packed repository for use over
+./.git/hooks/post-update.sample:# dumb transports.
+./.git/hooks/post-update.sample:#
+./.git/hooks/post-update.sample:# To enable this hook, rename this file to "post-update".
+./.git/hooks/post-update.sample:exec git update-server-info
+./.git/hooks/pre-merge-commit.sample:#!/bin/sh
+./.git/hooks/pre-merge-commit.sample:#
+./.git/hooks/pre-merge-commit.sample:# An example hook script to verify what is about to be committed.
+./.git/hooks/pre-merge-commit.sample:# Called by "git merge" with no arguments.  The hook should
+./.git/hooks/pre-merge-commit.sample:# exit with non-zero status after issuing an appropriate message to
+./.git/hooks/pre-merge-commit.sample:# stderr if it wants to stop the merge commit.
+./.git/hooks/pre-merge-commit.sample:#
+./.git/hooks/pre-merge-commit.sample:# To enable this hook, rename this file to "pre-merge-commit".
+./.git/hooks/pre-merge-commit.sample:. git-sh-setup
+./.git/hooks/pre-merge-commit.sample:test -x "$GIT_DIR/hooks/pre-commit" &&
+./.git/hooks/pre-merge-commit.sample:        exec "$GIT_DIR/hooks/pre-commit"
+./.git/hooks/pre-merge-commit.sample::
+./.git/hooks/pre-applypatch.sample:#!/bin/sh
+./.git/hooks/pre-applypatch.sample:#
+./.git/hooks/pre-applypatch.sample:# An example hook script to verify what is about to be committed
+./.git/hooks/pre-applypatch.sample:# by applypatch from an e-mail message.
+./.git/hooks/pre-applypatch.sample:#
+./.git/hooks/pre-applypatch.sample:# The hook should exit with non-zero status after issuing an
+./.git/hooks/pre-applypatch.sample:# appropriate message if it wants to stop the commit.
+./.git/hooks/pre-applypatch.sample:#
+./.git/hooks/pre-applypatch.sample:# To enable this hook, rename this file to "pre-applypatch".
+./.git/hooks/pre-applypatch.sample:. git-sh-setup
+./.git/hooks/pre-applypatch.sample:precommit="$(git rev-parse --git-path hooks/pre-commit)"
+./.git/hooks/pre-applypatch.sample:test -x "$precommit" && exec "$precommit" ${1+"$@"}
+./.git/hooks/pre-applypatch.sample::
+./.git/hooks/pre-push.sample:#!/bin/sh
+./.git/hooks/pre-push.sample:# An example hook script to verify what is about to be pushed.  Called by "git
+./.git/hooks/pre-push.sample:# push" after it has checked the remote status, but before anything has been
+./.git/hooks/pre-push.sample:# pushed.  If this script exits with a non-zero status nothing will be pushed.
+./.git/hooks/pre-push.sample:#
+./.git/hooks/pre-push.sample:# This hook is called with the following parameters:
+./.git/hooks/pre-push.sample:#
+./.git/hooks/pre-push.sample:# $1 -- Name of the remote to which the push is being done
+./.git/hooks/pre-push.sample:# $2 -- URL to which the push is being done
+./.git/hooks/pre-push.sample:#
+./.git/hooks/pre-push.sample:# If pushing without using a named remote those arguments will be equal.
+./.git/hooks/pre-push.sample:#
+./.git/hooks/pre-push.sample:# Information about the commits which are being pushed is supplied as lines to
+./.git/hooks/pre-push.sample:# the standard input in the form:
+./.git/hooks/pre-push.sample:#
+./.git/hooks/pre-push.sample:#   <local ref> <local oid> <remote ref> <remote oid>
+./.git/hooks/pre-push.sample:#
+./.git/hooks/pre-push.sample:# This sample shows how to prevent push of commits where the log message starts
+./.git/hooks/pre-push.sample:# with "WIP" (work in progress).
+./.git/hooks/pre-push.sample:remote="$1"
+./.git/hooks/pre-push.sample:url="$2"
+./.git/hooks/pre-push.sample:zero=$(git hash-object --stdin </dev/null | tr '[0-9a-f]' '0')
+./.git/hooks/pre-push.sample:while read local_ref local_oid remote_ref remote_oid
+./.git/hooks/pre-push.sample:do
+./.git/hooks/pre-push.sample:	if test "$local_oid" = "$zero"
+./.git/hooks/pre-push.sample:	then
+./.git/hooks/pre-push.sample:		# Handle delete
+./.git/hooks/pre-push.sample:		:
+./.git/hooks/pre-push.sample:	else
+./.git/hooks/pre-push.sample:		if test "$remote_oid" = "$zero"
+./.git/hooks/pre-push.sample:		then
+./.git/hooks/pre-push.sample:			# New branch, examine all commits
+./.git/hooks/pre-push.sample:			range="$local_oid"
+./.git/hooks/pre-push.sample:		else
+./.git/hooks/pre-push.sample:			# Update to existing branch, examine new commits
+./.git/hooks/pre-push.sample:			range="$remote_oid..$local_oid"
+./.git/hooks/pre-push.sample:		fi
+./.git/hooks/pre-push.sample:		# Check for WIP commit
+./.git/hooks/pre-push.sample:		commit=$(git rev-list -n 1 --grep '^WIP' "$range")
+./.git/hooks/pre-push.sample:		if test -n "$commit"
+./.git/hooks/pre-push.sample:		then
+./.git/hooks/pre-push.sample:			echo >&2 "Found WIP commit in $local_ref, not pushing"
+./.git/hooks/pre-push.sample:			exit 1
+./.git/hooks/pre-push.sample:		fi
+./.git/hooks/pre-push.sample:	fi
+./.git/hooks/pre-push.sample:done
+./.git/hooks/pre-push.sample:exit 0
+./.git/hooks/update.sample:#!/bin/sh
+./.git/hooks/update.sample:#
+./.git/hooks/update.sample:# An example hook script to block unannotated tags from entering.
+./.git/hooks/update.sample:# Called by "git receive-pack" with arguments: refname sha1-old sha1-new
+./.git/hooks/update.sample:#
+./.git/hooks/update.sample:# To enable this hook, rename this file to "update".
+./.git/hooks/update.sample:#
+./.git/hooks/update.sample:# Config
+./.git/hooks/update.sample:# ------
+./.git/hooks/update.sample:# hooks.allowunannotated
+./.git/hooks/update.sample:#   This boolean sets whether unannotated tags will be allowed into the
+./.git/hooks/update.sample:#   repository.  By default they won't be.
+./.git/hooks/update.sample:# hooks.allowdeletetag
+./.git/hooks/update.sample:#   This boolean sets whether deleting tags will be allowed in the
+./.git/hooks/update.sample:#   repository.  By default they won't be.
+./.git/hooks/update.sample:# hooks.allowmodifytag
+./.git/hooks/update.sample:#   This boolean sets whether a tag may be modified after creation. By default
+./.git/hooks/update.sample:#   it won't be.
+./.git/hooks/update.sample:# hooks.allowdeletebranch
+./.git/hooks/update.sample:#   This boolean sets whether deleting branches will be allowed in the
+./.git/hooks/update.sample:#   repository.  By default they won't be.
+./.git/hooks/update.sample:# hooks.denycreatebranch
+./.git/hooks/update.sample:#   This boolean sets whether remotely creating branches will be denied
+./.git/hooks/update.sample:#   in the repository.  By default this is allowed.
+./.git/hooks/update.sample:#
+./.git/hooks/update.sample:# --- Command line
+./.git/hooks/update.sample:refname="$1"
+./.git/hooks/update.sample:oldrev="$2"
+./.git/hooks/update.sample:newrev="$3"
+./.git/hooks/update.sample:# --- Safety check
+./.git/hooks/update.sample:if [ -z "$GIT_DIR" ]; then
+./.git/hooks/update.sample:	echo "Don't run this script from the command line." >&2
+./.git/hooks/update.sample:	echo " (if you want, you could supply GIT_DIR then run" >&2
+./.git/hooks/update.sample:	echo "  $0 <ref> <oldrev> <newrev>)" >&2
+./.git/hooks/update.sample:	exit 1
+./.git/hooks/update.sample:fi
+./.git/hooks/update.sample:if [ -z "$refname" -o -z "$oldrev" -o -z "$newrev" ]; then
+./.git/hooks/update.sample:	echo "usage: $0 <ref> <oldrev> <newrev>" >&2
+./.git/hooks/update.sample:	exit 1
+./.git/hooks/update.sample:fi
+./.git/hooks/update.sample:# --- Config
+./.git/hooks/update.sample:allowunannotated=$(git config --type=bool hooks.allowunannotated)
+./.git/hooks/update.sample:allowdeletebranch=$(git config --type=bool hooks.allowdeletebranch)
+./.git/hooks/update.sample:denycreatebranch=$(git config --type=bool hooks.denycreatebranch)
+./.git/hooks/update.sample:allowdeletetag=$(git config --type=bool hooks.allowdeletetag)
+./.git/hooks/update.sample:allowmodifytag=$(git config --type=bool hooks.allowmodifytag)
+./.git/hooks/update.sample:# check for no description
+./.git/hooks/update.sample:projectdesc=$(sed -e '1q' "$GIT_DIR/description")
+./.git/hooks/update.sample:case "$projectdesc" in
+./.git/hooks/update.sample:"Unnamed repository"* | "")
+./.git/hooks/update.sample:	echo "*** Project description file hasn't been set" >&2
+./.git/hooks/update.sample:	exit 1
+./.git/hooks/update.sample:	;;
+./.git/hooks/update.sample:esac
+./.git/hooks/update.sample:# --- Check types
+./.git/hooks/update.sample:# if $newrev is 0000...0000, it's a commit to delete a ref.
+./.git/hooks/update.sample:zero=$(git hash-object --stdin </dev/null | tr '[0-9a-f]' '0')
+./.git/hooks/update.sample:if [ "$newrev" = "$zero" ]; then
+./.git/hooks/update.sample:	newrev_type=delete
+./.git/hooks/update.sample:else
+./.git/hooks/update.sample:	newrev_type=$(git cat-file -t $newrev)
+./.git/hooks/update.sample:fi
+./.git/hooks/update.sample:case "$refname","$newrev_type" in
+./.git/hooks/update.sample:	refs/tags/*,commit)
+./.git/hooks/update.sample:		# un-annotated tag
+./.git/hooks/update.sample:		short_refname=${refname##refs/tags/}
+./.git/hooks/update.sample:		if [ "$allowunannotated" != "true" ]; then
+./.git/hooks/update.sample:			echo "*** The un-annotated tag, $short_refname, is not allowed in this repository" >&2
+./.git/hooks/update.sample:			echo "*** Use 'git tag [ -a | -s ]' for tags you want to propagate." >&2
+./.git/hooks/update.sample:			exit 1
+./.git/hooks/update.sample:		fi
+./.git/hooks/update.sample:		;;
+./.git/hooks/update.sample:	refs/tags/*,delete)
+./.git/hooks/update.sample:		# delete tag
+./.git/hooks/update.sample:		if [ "$allowdeletetag" != "true" ]; then
+./.git/hooks/update.sample:			echo "*** Deleting a tag is not allowed in this repository" >&2
+./.git/hooks/update.sample:			exit 1
+./.git/hooks/update.sample:		fi
+./.git/hooks/update.sample:		;;
+./.git/hooks/update.sample:	refs/tags/*,tag)
+./.git/hooks/update.sample:		# annotated tag
+./.git/hooks/update.sample:		if [ "$allowmodifytag" != "true" ] && git rev-parse $refname > /dev/null 2>&1
+./.git/hooks/update.sample:		then
+./.git/hooks/update.sample:			echo "*** Tag '$refname' already exists." >&2
+./.git/hooks/update.sample:			echo "*** Modifying a tag is not allowed in this repository." >&2
+./.git/hooks/update.sample:			exit 1
+./.git/hooks/update.sample:		fi
+./.git/hooks/update.sample:		;;
+./.git/hooks/update.sample:	refs/heads/*,commit)
+./.git/hooks/update.sample:		# branch
+./.git/hooks/update.sample:		if [ "$oldrev" = "$zero" -a "$denycreatebranch" = "true" ]; then
+./.git/hooks/update.sample:			echo "*** Creating a branch is not allowed in this repository" >&2
+./.git/hooks/update.sample:			exit 1
+./.git/hooks/update.sample:		fi
+./.git/hooks/update.sample:		;;
+./.git/hooks/update.sample:	refs/heads/*,delete)
+./.git/hooks/update.sample:		# delete branch
+./.git/hooks/update.sample:		if [ "$allowdeletebranch" != "true" ]; then
+./.git/hooks/update.sample:			echo "*** Deleting a branch is not allowed in this repository" >&2
+./.git/hooks/update.sample:			exit 1
+./.git/hooks/update.sample:		fi
+./.git/hooks/update.sample:		;;
+./.git/hooks/update.sample:	refs/remotes/*,commit)
+./.git/hooks/update.sample:		# tracking branch
+./.git/hooks/update.sample:		;;
+./.git/hooks/update.sample:	refs/remotes/*,delete)
+./.git/hooks/update.sample:		# delete tracking branch
+./.git/hooks/update.sample:		if [ "$allowdeletebranch" != "true" ]; then
+./.git/hooks/update.sample:			echo "*** Deleting a tracking branch is not allowed in this repository" >&2
+./.git/hooks/update.sample:			exit 1
+./.git/hooks/update.sample:		fi
+./.git/hooks/update.sample:		;;
+./.git/hooks/update.sample:	*)
+./.git/hooks/update.sample:		# Anything else (is there anything else?)
+./.git/hooks/update.sample:		echo "*** Update hook: unknown type of update to ref $refname of type $newrev_type" >&2
+./.git/hooks/update.sample:		exit 1
+./.git/hooks/update.sample:		;;
+./.git/hooks/update.sample:esac
+./.git/hooks/update.sample:# --- Finished
+./.git/hooks/update.sample:exit 0
+./.git/hooks/push-to-checkout.sample:#!/bin/sh
+./.git/hooks/push-to-checkout.sample:# An example hook script to update a checked-out tree on a git push.
+./.git/hooks/push-to-checkout.sample:#
+./.git/hooks/push-to-checkout.sample:# This hook is invoked by git-receive-pack(1) when it reacts to git
+./.git/hooks/push-to-checkout.sample:# push and updates reference(s) in its repository, and when the push
+./.git/hooks/push-to-checkout.sample:# tries to update the branch that is currently checked out and the
+./.git/hooks/push-to-checkout.sample:# receive.denyCurrentBranch configuration variable is set to
+./.git/hooks/push-to-checkout.sample:# updateInstead.
+./.git/hooks/push-to-checkout.sample:#
+./.git/hooks/push-to-checkout.sample:# By default, such a push is refused if the working tree and the index
+./.git/hooks/push-to-checkout.sample:# of the remote repository has any difference from the currently
+./.git/hooks/push-to-checkout.sample:# checked out commit; when both the working tree and the index match
+./.git/hooks/push-to-checkout.sample:# the current commit, they are updated to match the newly pushed tip
+./.git/hooks/push-to-checkout.sample:# of the branch. This hook is to be used to override the default
+./.git/hooks/push-to-checkout.sample:# behaviour; however the code below reimplements the default behaviour
+./.git/hooks/push-to-checkout.sample:# as a starting point for convenient modification.
+./.git/hooks/push-to-checkout.sample:#
+./.git/hooks/push-to-checkout.sample:# The hook receives the commit with which the tip of the current
+./.git/hooks/push-to-checkout.sample:# branch is going to be updated:
+./.git/hooks/push-to-checkout.sample:commit=$1
+./.git/hooks/push-to-checkout.sample:# It can exit with a non-zero status to refuse the push (when it does
+./.git/hooks/push-to-checkout.sample:# so, it must not modify the index or the working tree).
+./.git/hooks/push-to-checkout.sample:die () {
+./.git/hooks/push-to-checkout.sample:	echo >&2 "$*"
+./.git/hooks/push-to-checkout.sample:	exit 1
+./.git/hooks/push-to-checkout.sample:}
+./.git/hooks/push-to-checkout.sample:# Or it can make any necessary changes to the working tree and to the
+./.git/hooks/push-to-checkout.sample:# index to bring them to the desired state when the tip of the current
+./.git/hooks/push-to-checkout.sample:# branch is updated to the new commit, and exit with a zero status.
+./.git/hooks/push-to-checkout.sample:#
+./.git/hooks/push-to-checkout.sample:# For example, the hook can simply run git read-tree -u -m HEAD "$1"
+./.git/hooks/push-to-checkout.sample:# in order to emulate git fetch that is run in the reverse direction
+./.git/hooks/push-to-checkout.sample:# with git push, as the two-tree form of git read-tree -u -m is
+./.git/hooks/push-to-checkout.sample:# essentially the same as git switch or git checkout that switches
+./.git/hooks/push-to-checkout.sample:# branches while keeping the local changes in the working tree that do
+./.git/hooks/push-to-checkout.sample:# not interfere with the difference between the branches.
+./.git/hooks/push-to-checkout.sample:# The below is a more-or-less exact translation to shell of the C code
+./.git/hooks/push-to-checkout.sample:# for the default behaviour for git's push-to-checkout hook defined in
+./.git/hooks/push-to-checkout.sample:# the push_to_deploy() function in builtin/receive-pack.c.
+./.git/hooks/push-to-checkout.sample:#
+./.git/hooks/push-to-checkout.sample:# Note that the hook will be executed from the repository directory,
+./.git/hooks/push-to-checkout.sample:# not from the working tree, so if you want to perform operations on
+./.git/hooks/push-to-checkout.sample:# the working tree, you will have to adapt your code accordingly, e.g.
+./.git/hooks/push-to-checkout.sample:# by adding "cd .." or using relative paths.
+./.git/hooks/push-to-checkout.sample:if ! git update-index -q --ignore-submodules --refresh
+./.git/hooks/push-to-checkout.sample:then
+./.git/hooks/push-to-checkout.sample:	die "Up-to-date check failed"
+./.git/hooks/push-to-checkout.sample:fi
+./.git/hooks/push-to-checkout.sample:if ! git diff-files --quiet --ignore-submodules --
+./.git/hooks/push-to-checkout.sample:then
+./.git/hooks/push-to-checkout.sample:	die "Working directory has unstaged changes"
+./.git/hooks/push-to-checkout.sample:fi
+./.git/hooks/push-to-checkout.sample:# This is a rough translation of:
+./.git/hooks/push-to-checkout.sample:#
+./.git/hooks/push-to-checkout.sample:#   head_has_history() ? "HEAD" : EMPTY_TREE_SHA1_HEX
+./.git/hooks/push-to-checkout.sample:if git cat-file -e HEAD 2>/dev/null
+./.git/hooks/push-to-checkout.sample:then
+./.git/hooks/push-to-checkout.sample:	head=HEAD
+./.git/hooks/push-to-checkout.sample:else
+./.git/hooks/push-to-checkout.sample:	head=$(git hash-object -t tree --stdin </dev/null)
+./.git/hooks/push-to-checkout.sample:fi
+./.git/hooks/push-to-checkout.sample:if ! git diff-index --quiet --cached --ignore-submodules $head --
+./.git/hooks/push-to-checkout.sample:then
+./.git/hooks/push-to-checkout.sample:	die "Working directory has staged changes"
+./.git/hooks/push-to-checkout.sample:fi
+./.git/hooks/push-to-checkout.sample:if ! git read-tree -u -m "$commit"
+./.git/hooks/push-to-checkout.sample:then
+./.git/hooks/push-to-checkout.sample:	die "Could not update working tree to new HEAD"
+./.git/hooks/push-to-checkout.sample:fi
+./.git/refs/heads/main:f63d591bd5a9bac31be825f2ccdfe1438f885425
+./.git/refs/remotes/origin/HEAD:ref: refs/remotes/origin/main
+Binary file ./.git/index matches
+./.git/packed-refs:# pack-refs with: peeled fully-peeled sorted 
+./.git/packed-refs:f63d591bd5a9bac31be825f2ccdfe1438f885425 refs/remotes/origin/main
